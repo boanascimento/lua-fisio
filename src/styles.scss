@@ -35,15 +35,14 @@ html {
   background-color: $color-grey-one;
 }
 
+h2 {
+  transition: $default-transition;
+}
+
 .container {
   width     : 94%;
   margin    : 1rem auto;
   transition: $default-transition;
-
-  @media screen and (max-width: $breakpoint-sm) {
-    width: 100%;
-  }
-
 }
 
 // Scroll barStyle
@@ -60,4 +59,10 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: $color-green-two;
   width           : 1rem;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .container {
+    width: 100%;
+  }
 }
