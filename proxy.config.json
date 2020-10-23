@@ -1,0 +1,9 @@
+{
+  "/auth": {
+    "target": "http://*",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    }      
+  }
+}
