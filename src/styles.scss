@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+@import './animations.scss';
+
+// Breakpoints variables
+$breakpoint-xs : 520px;
+$breakpoint-sm : 768px;
+$breakpoint-md : 1024px;
+$breakpoint-lg : 1200px;
+$breakpoint-xl : 1400px;
+$breakpoint-xxl: 1600px;
+
+// Color variables
+$color-grey-one             : #f4f3ef;
+$color-yellow-one           : #4b4840;
+$color-grey-transparent-one : #f4f3ef41;
+$color-green-one            : #93ACA8;
+$color-green-two            : #5e6f6c;
+
+// Commons variables
+$default-transition       : 0.5s;
+$default-transition-delay : 0.15s;
+$fest-transition          : 0.15s;
+$animation-fade-in        : fade-in 1s;
+$animation-fade-out       : fade-out 1s;
+
+// Image URL
+$img-green-rectangle: '/assets/svg/green-rectangle.svg';
+
+html,
+body {
+  font-family    : Noto Sans, sans-serif;
+  padding        : 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  background-color: $color-grey-one;
+}
+
+h2 {
+  transition : $default-transition;
+  font-family: 'Times New Roman', Times, serif;
+  font-size  : 2.5rem;
+}
+
+p {
+  color: $color-yellow-one;
+  font-size: 0.7rem;
+}
+
+.container {
+  width     : 94%;
+  margin    : 1rem auto;
+  transition: $default-transition;
+}
+
+// Scroll barStyle
+::-webkit-scrollbar-track {
+  background-color: $color-grey-one;
+}
+
+::-webkit-scrollbar {
+  width           : 0.8rem;
+  background-color: $color-green-two;
+  transition      : $default-transition;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-green-two;
+  width           : 1rem;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .container {
+    width: 100%;
+  }
+}

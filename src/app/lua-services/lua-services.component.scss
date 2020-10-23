@@ -1,0 +1,16 @@
+@import '../../styles.scss';
+
+app-lua-services {
+  position: relative;
+  .circle {
+    position        : absolute;
+    z-index         : -1;
+    right           : 0;
+    top             : 0;
+    height          : 65%;
+    width           : 40%;
+    background-color: $color-green-one;
+    transition      : $default-transition;
+
+  }
+}

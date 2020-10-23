@@ -1,0 +1,130 @@
+@import '../styles.scss';
+
+.green-rectangle {
+  position        : absolute;
+  z-index         : -1;
+  right           : 0;
+  top             : 0;
+  height          : 65%;
+  width           : 40%;
+  background-color: $color-green-one;
+  transition      : $default-transition;
+  transition-delay: $default-transition-delay;
+}
+
+.section {
+  position        : relative;
+  background-color: transparent;
+
+  .header {
+    margin         : 2rem 0;
+    width          : 100%;
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+    justify-content: space-between;
+    flex-basis     : auto;
+    transition     : flex-basis $default-transition;
+
+    .logo {
+      transition: $default-transition;
+      width     : 10rem;
+    }
+
+    li {
+      transition : $default-transition;
+      margin-left: 2rem;
+      display    : inline;
+
+      a {
+        color          : $color-grey-one;
+        transition     : $default-transition;
+        padding        : 0.5rem 1rem;
+        cursor         : pointer;
+        text-decoration: none;
+
+        &:hover {
+          transition      : $fest-transition;
+          background-color: $color-grey-transparent-one;
+        }
+
+        &:active {
+          background-color: $color-green-one;
+        }
+      }
+    }
+
+    .menu {
+      transition: $default-transition;
+
+      &.show-menu {
+        opacity: 1;
+      }
+
+      &.hide-menu {
+        opacity: 0;
+      }
+
+      &.mobile-menu {
+
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .professional-info {
+    padding: 2rem 3rem;
+
+    .about-me {
+      width     : 55%;
+      max-width : 30rem;
+      text-align: justify;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .green-rectangle {
+    width : 85%;
+    height: 17rem;
+  }
+
+  .section {
+    .header {
+      flex-direction : column;
+      justify-content: center;
+      margin         : 1 auto;
+      animation      : $animation-fade-in;
+
+      .logo {
+        width: 7rem;
+      }
+
+      ul {
+        padding-left: 0;
+
+        li {
+          display: block;
+          margin : 1rem 0;
+        }
+
+        li:first-child {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    .professional-info {
+      .about-me {
+        width    : 100%;
+        max-width: none;
+
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
