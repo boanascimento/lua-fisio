@@ -11,15 +11,17 @@ $breakpoint-xxl: 1600px;
 
 // Color variables
 $color-grey-one             : #f4f3ef;
+$color-yellow-one           : #4b4840;
 $color-grey-transparent-one : #f4f3ef41;
 $color-green-one            : #93ACA8;
 $color-green-two            : #5e6f6c;
 
 // Commons variables
-$default-transition : 0.5s;
-$fest-transition    : 0.15s;
-$animation-fade-in  : fade-in 1s;
-$animation-fade-out : fade-out 1s;
+$default-transition       : 0.5s;
+$default-transition-delay : 0.15s;
+$fest-transition          : 0.15s;
+$animation-fade-in        : fade-in 1s;
+$animation-fade-out       : fade-out 1s;
 
 // Image URL
 $img-green-rectangle: '/assets/svg/green-rectangle.svg';
@@ -35,15 +37,21 @@ html {
   background-color: $color-grey-one;
 }
 
+h2 {
+  transition : $default-transition;
+  font-family: 'Times New Roman', Times, serif;
+  font-size  : 2.5rem;
+}
+
+p {
+  color: $color-yellow-one;
+  font-size: 0.7rem;
+}
+
 .container {
   width     : 94%;
   margin    : 1rem auto;
   transition: $default-transition;
-
-  @media screen and (max-width: $breakpoint-sm) {
-    width: 100%;
-  }
-
 }
 
 // Scroll barStyle
@@ -60,4 +68,10 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: $color-green-two;
   width           : 1rem;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .container {
+    width: 100%;
+  }
 }
