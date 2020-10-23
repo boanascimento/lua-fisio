@@ -1,0 +1,25 @@
+image: node:12.13.1
+
+stages:
+  - build
+  - dev
+
+build:
+  stage: build
+  script:
+    - ng build --aot
+  only:
+    - develop
+    - master
+
+dev:
+  type: deploy
+  stage: dev
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV_FRONT --api-key=$HEROKU_APP_KEY_DEV_FRONT --skip_cleanup
+  only:
+    - develop
