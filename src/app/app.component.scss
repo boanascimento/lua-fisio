@@ -9,6 +9,7 @@
   width           : 40%;
   background-color: $color-green-one;
   transition      : $default-transition;
+  transition-delay: $default-transition-delay;
 }
 
 .section {
@@ -74,13 +75,20 @@
   }
 
   .professional-info {
-    
+    padding: 2rem 3rem;
+
+    .about-me {
+      width     : 55%;
+      max-width : 30rem;
+      text-align: justify;
+    }
   }
 }
 
 @media screen and (max-width: $breakpoint-sm) {
   .green-rectangle {
-    width: 85%;
+    width : 85%;
+    height: 17rem;
   }
 
   .section {
@@ -104,6 +112,17 @@
 
         li:first-child {
           margin-top: 2rem;
+        }
+      }
+    }
+
+    .professional-info {
+      .about-me {
+        width    : 100%;
+        max-width: none;
+
+        h2 {
+          text-align: center;
         }
       }
     }

@@ -1,26 +1,32 @@
 <div class="green-rectangle"></div>
-<section class="container section" [style.height.px]="screenHeight - 52">
+<section class="container section" [style.min-height.px]="screenHeight - 52">
   <header class="header">
     <img class="logo" src="assets/svg/lua-logo-rectangular.svg">
     <div class="menu">
       <ul>
         <li>
           <a href="#luaServices">
-            Serviços
+            {{ 'services' | translate}}
           </a>
         </li>
         <li>
           <a>
-            Contato
+            {{  'contact' | translate }}
           </a>
         </li>
       </ul>
     </div>
   </header>
   <div class="professional-info">
-    <h2>
-      Sobre mim
-    </h2>
+    <div class="about-me">
+      <h2>
+        {{'aboutMe' | translate}}
+      </h2>
+      <p [innerHTML]="'aboutMeText1' | translate"></p>
+      <p [innerHTML]="'aboutMeText2' | translate"></p>
+      <p [innerHTML]="'aboutMeText3' | translate"></p>
+    </div>
+    <div class="lua-picture"></div>
   </div>
 </section>
-<app-lua-services id="luaServices" [style.height.px]="screenHeight - 52"></app-lua-services>
+<app-lua-services id="luaServices" [style.min-height.px]="screenHeight - 52"></app-lua-services>
